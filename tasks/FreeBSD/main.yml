@@ -23,6 +23,7 @@
     with_items:
       - bash
       - ca_root_nss
+      - gtar
 
   - name: Retrieve the sensu txz package
     get_url:

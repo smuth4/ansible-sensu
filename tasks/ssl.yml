@@ -15,6 +15,20 @@
     when: sensu_ssl_gen_certs
     static: false
 
+  - debug:
+      var: groups['sensu_masters']
+  - debug:
+      var: hostvars['freebsd10']
+  - debug:
+      var: sensu_config_path
+  - debug:
+      var: sensu_master_config_path
+  - debug:
+      msg: "{{ sensu_ssl_tool_base_path }}/client/cert.pem"
+  - debug:
+      var: sensu_ssl_client_cert
+    
+    
   - name: Deploy the Sensu client SSL cert/key
     copy:
       src: "{{ item.src }}"

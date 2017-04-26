@@ -9,6 +9,11 @@
       url: https://sensu.global.ssl.fastly.net/apt/pubkey.gpg
       state: present
 
+  - name: Install the HTTPS transport for apt
+    apt:
+      name: apt-transport-https
+      state: present
+      
   - name: Ensure the Sensu Core APT repo is present
     apt_repository:
       repo: "deb     https://sensu.global.ssl.fastly.net/apt {{ ansible_distribution_release }} main"
